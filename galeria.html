@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang=pl>
+<head>
+	<title>Galeria zdjęć</title>
+	<meta charset=utf-8>
+	<link rel="stylesheet" href="arkusz.css">
+	<link rel="shortcut icon" href="foto/ikona.png">
+</head>
+<body>
+
+<p class="topnav" id="myTopnav">
+  <a href="index.html">Strona główna</a>
+  <a href="mapa.html">Mapa</a>
+  <a href="ankieta.html">Ankieta</a>
+  <a href="galeria.html" class="active">Galeria</a>
+</p>
+
+<div style="border-style: none; text-align: center; background-color: #c3c3c3; color: black"><a href="index.html"><img src="foto/logo.png" alt="Herb miasta Madryt" style="float:left; width: 10%; min-width: 90px; margin: 10px;"></a>
+<h1>Galeria</h1></div>
+  
+<p class="slideshow-container">
+
+  <div class="mySlides fade" style="text-align: center;">
+    <img src="foto/galeria1.jpg" style="width:100%; max-width: 500px;">
+  </div>
+
+  <div class="mySlides fade" style="text-align: center;">
+    <img src="foto/galeria2.jpeg" style="width:100%; max-width: 500px;">
+  </div>
+
+  <div class="mySlides fade" style="text-align: center;">
+    <img src="foto/galeria3.jpg" style="width:100%; max-width: 500px;">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</p>
+<br>
+
+<p style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</p>
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<footer>
+Maciej Kajdanowicz, klasa 2ta, grupa 1
+</footer>
+
+</body>
